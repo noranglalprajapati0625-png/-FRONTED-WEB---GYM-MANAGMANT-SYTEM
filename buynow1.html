@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Buy Basic Plan — FITCLUB (₹600)</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1: #050505;
+    --bg2: #0b0b0f;
+    --glass: rgba(255,255,255,0.04);
+    --gold-1: #ffd800;
+    --gold-2: #ffb800;
+    --muted: #cfcfcf;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Poppins",sans-serif;
+    background: radial-gradient(1200px 700px at 10% 10%, rgba(255,216,60,0.03), transparent 8%),
+                radial-gradient(900px 500px at 90% 90%, rgba(255,184,40,0.02), transparent 6%),
+                linear-gradient(180deg,var(--bg1),var(--bg2));
+    color: #fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:36px;
+  }
+
+  .card {
+    width: 420px;
+    border-radius:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 40px rgba(255,200,0,0.03) inset;
+    overflow:hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    transform: translateY(0);
+    transition: transform .35s ease;
+  }
+  .card:hover{ transform: translateY(-6px); }
+
+  /* Hero image area */
+  .hero {
+    height:140px;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+      url('/mnt/data/2933b126-b91a-458e-9d3e-d503f8b5b9e2.png') center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+    padding:18px;
+  }
+  .brand {
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo {
+    width:56px;height:56px;border-radius:12px;
+    background: linear-gradient(135deg,var(--gold-1),var(--gold-2));
+    display:flex;align-items:center;justify-content:center;
+    color:#111;font-weight:800;font-size:20px;box-shadow:0 6px 18px rgba(255,180,0,0.18);
+    border: 1px solid rgba(0,0,0,0.25);
+  }
+  .brand h3{ margin:0;font-size:18px; font-weight:700; color:#fff; letter-spacing:0.6px; text-shadow:0 4px 18px rgba(0,0,0,0.6); }
+  .brand p{ margin:0;font-size:12px;color:var(--muted); }
+
+  /* Plan area */
+  .body {
+    padding:22px;
+  }
+  .plan {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:18px;
+    border-radius:12px;
+    border: 1px solid rgba(255,215,0,0.07);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    margin-bottom:18px;
+    position:relative;
+    overflow:visible;
+  }
+
+  .badge {
+    position:absolute;
+    left:-18px; top:-18px;
+    background: linear-gradient(135deg,var(--gold-1),var(--gold-2));
+    color:#111;padding:10px 14px;border-radius:12px;font-weight:800;
+    box-shadow: 0 8px 24px rgba(255,184,0,0.18);
+    transform: rotate(-8deg);
+    font-size:13px;
+  }
+
+  .plan-info { text-align:left; padding-left:12px; }
+  .plan-title {
+    font-size:20px; font-weight:800; color:var(--gold-1);
+    text-shadow: 0 6px 18px rgba(255,200,0,0.08);
+    margin-bottom:6px;
+    letter-spacing:0.6px;
+  }
+  .plan-sub { color:var(--muted); font-size:13px; margin:0; }
+
+  .plan-price {
+    text-align:right;
+  }
+  .price-big {
+    font-size:28px; font-weight:900; color: #fff;
+    background: linear-gradient(90deg, rgba(255,230,120,0.12), rgba(255,180,60,0.05));
+    padding:6px 14px;border-radius:10px;
+    border:1px solid rgba(255,200,0,0.08);
+    display:inline-block;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.5);
+  }
+  .price-currency {
+    display:block;font-size:12px;color:var(--muted); margin-top:6px;
+  }
+
+  form { margin-top:4px; }
+  label { font-size:13px; color: #eaeaea; display:block; margin-bottom:6px; font-weight:600; }
+  .field { margin-bottom:14px; }
+  input {
+    width:100%; padding:12px 14px; border-radius:10px; border:none; outline:none;
+    background: rgba(0,0,0,0.4); color:#fff; font-size:15px; border:1px solid rgba(255,255,255,0.03);
+    transition: box-shadow .18s ease, transform .12s ease;
+  }
+  input:focus { box-shadow: 0 6px 18px rgba(255,200,0,0.08); transform: translateY(-2px); }
+
+  .submit {
+    margin-top:8px;
+    display:flex; gap:10px;
+  }
+  button.buy {
+    flex:1;
+    padding:12px 16px;border-radius:12px;border:none;
+    background: linear-gradient(90deg,var(--gold-1),var(--gold-2));
+    color:#111; font-weight:800; font-size:16px; cursor:pointer;
+    box-shadow: 0 12px 34px rgba(255,180,0,0.18);
+    transition: transform .16s ease, box-shadow .16s ease;
+  }
+  button.buy:hover{ transform: translateY(-4px) scale(1.01); box-shadow: 0 18px 40px rgba(255,170,0,0.28); }
+
+  /* toast */
+  .toast {
+    position: fixed;
+    left:50%;
+    bottom:28px;
+    transform: translateX(-50%) translateY(24px);
+    background: linear-gradient(90deg, #111, rgba(255,255,255,0.03));
+    color:#fff;padding:12px 18px;border-radius:12px;
+    border:1px solid rgba(255,255,255,0.04); box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    opacity:0; pointer-events:none; transition: all .35s cubic-bezier(.2,.9,.3,1);
+  }
+  .toast.show { opacity:1; transform: translateX(-50%) translateY(0); pointer-events:auto; }
+
+  @media (max-width:480px){
+    .card{ width:100%; margin:18px; }
+    .hero{ height:120px }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card" role="region" aria-label="Buy Basic Plan">
+    <div class="hero" aria-hidden="true">
+      <div class="brand" style="margin-left:12px;">
+        <div class="logo">FC</div>
+        <div>
+          <h3 style="margin-bottom:4px">FITCLUB</h3>
+          <p style="margin-top:0">Join the basic plan — Start your fitness journey</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="plan">
+        <div class="badge">BEST START</div>
+
+        <div class="plan-info">
+          <div class="plan-title">Basic Package</div>
+          <p class="plan-sub">Access to gym equipment • 30 days validity</p>
+        </div>
+
+        <div class="plan-price">
+          <div class="price-big">₹600</div>
+          <div class="price-currency">one-time • 30 days</div>
+        </div>
+      </div>
+
+      <form id="buyForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile number</label>
+          <input id="phone" name="phone" type="tel" placeholder="10 digit mobile number" maxlength="10" inputmode="numeric" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="submit">
+          <button type="submit" class="buy" aria-label="Confirm and Buy Basic Plan">Confirm & Buy</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Your data has been sent to the server!</div>
+
+<script>
+  // Simple helper: show toast
+  function showToast(msg = "Saved", ms = 3000){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._timeout);
+    t._timeout = setTimeout(()=> t.classList.remove('show'), ms);
+  }
+
+  // Phone input: allow only digits
+  const phone = document.getElementById('phone');
+  phone.addEventListener('input', e=>{
+    let v = phone.value.replace(/\D/g,''); // remove non-digits
+    phone.value = v.slice(0,10);
+  });
+
+  // Submit handling
+  document.getElementById('buyForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const ph = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    // validation
+    if(!name){ alert('Please enter your name'); return; }
+    if(ph.length !== 10){ alert('Enter a valid 10-digit mobile number'); return; }
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ alert('Please enter a valid email'); return; }
+
+    // Simulate sending to server (here you can add fetch POST to your backend)
+    // Example payload:
+    const payload = { plan: 'basic', price: 600, name, phone: ph, email, ts: new Date().toISOString() };
+
+    // For demo we simply log and show toast
+    console.log('Sending payload to server ->', payload);
+
+    // show success toast
+    showToast('Your data has been sent to the server!');
+
+    // Optional: clear form after success (comment out if you don't want it)
+    // this.reset();
+  });
+</script>
+
+</body>
+</html>

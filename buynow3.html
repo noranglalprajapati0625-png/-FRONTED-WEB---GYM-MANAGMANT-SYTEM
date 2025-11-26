@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Plan - Neon Pro</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #05050a;
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+        /* HERO IMAGE WITH SOFT NEON OVERLAY */
+        .hero {
+            height: 340px;
+            background: url('/mnt/data/2933b126-b91a-458e-9d3e-d503f8b5b9e2.png') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(20, 0, 40, 0.7),
+                rgba(5, 0, 15, 0.9)
+            );
+        }
+
+        .hero-text {
+            position: absolute;
+            bottom: 35px;
+            left: 25px;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 38px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #7d4bff, #00e5ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* MAIN CARD */
+        .box {
+            width: 90%;
+            max-width: 430px;
+            margin: -40px auto 40px;
+            padding: 28px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            border: 1px solid rgba(120, 60, 240, 0.35);
+            box-shadow: 0 0 20px rgba(120, 60, 240, 0.18);
+        }
+
+        /* PLAN CARD */
+        .plan-card {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .plan-card h2 {
+            margin: 0;
+            font-size: 27px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #8a5dff, #00e5ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-top: 10px;
+            color: #d5d5ff;
+            text-shadow: 0 0 8px rgba(120, 60, 255, 0.5);
+        }
+
+        .plan-card span {
+            font-size: 15px;
+            opacity: 0.85;
+        }
+
+        /* FORM INPUTS */
+        label {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(140, 60, 255, 0.3);
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #9f70ff;
+            box-shadow: 0 0 12px rgba(140, 60, 255, 0.5);
+        }
+
+        /* BUTTON */
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #7d4bff, #00eaff);
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(120, 60, 255, 0.4);
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(120, 60, 255, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Diamond Plan</h1>
+            <p>Premium Neon Membership</p>
+        </div>
+    </div>
+
+    <!-- CONTENT BOX -->
+    <div class="box">
+
+        <div class="plan-card">
+            <h2>Diamond Package</h2>
+            <div class="price">₹1600</div>
+            <span>30 Days Access</span>
+        </div>
+
+        <form id="buyForm">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+
+            <label>Mobile Number</label>
+            <input type="text" id="phone" maxlength="10" placeholder="Enter 10 digit number" required>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <button type="submit">Confirm & Buy</button>
+        </form>
+    </div>
+
+
+<script>
+document.getElementById("buyForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let phone = document.getElementById("phone").value;
+
+    if (phone.length !== 10 || isNaN(phone)) {
+        alert("Please enter a valid 10 digit mobile number");
+        return;
+    }
+
+    alert("Your Neon Diamond Plan request has been sent!");
+});
+</script>
+
+</body>
+</html>

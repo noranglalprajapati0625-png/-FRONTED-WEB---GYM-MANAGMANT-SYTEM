@@ -1,0 +1,356 @@
+
+body{
+    background-color:rgb(1, 1, 14);
+    font-family: 'robot',sans-serif;
+    color: white;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px 4px rgb(31, 30, 30);
+    height: 40px;
+   position: fixed;
+   width: 100%;
+    margin: -8px;
+    padding:4PX ;
+     
+    background-color: rgb(1,1,14);
+    color: rgb(216, 202, 11);
+   
+}
+nav ul li a{
+    margin-inline:20px ;
+    text-decoration: none;
+    color: white;
+    
+
+}
+ul li{
+    list-style: none;
+}
+nav ul{
+    margin-right: 33px;
+    margin-top: 7px;
+}
+
+ul li button{
+    width: 90px;
+    height: 20px;
+    margin-right: 10px;
+    background-color:  rgb(216, 202, 11);
+    border: none;
+    font-size: 13px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+}
+ul li button:hover{
+    border: 2px solid white;
+    background-color:transparent;
+    color: white;
+    cursor: pointer;
+    
+
+}
+.logo{
+    font-size: 20px;
+    margin-top: -28px 
+}
+ul li a:hover{
+    color:yellow ;
+    
+}
+/* main*/
+.home{
+    display: flex;
+    justify-content: center;
+}
+.home img{
+      width: 25%;    
+      margin-top: 45Px;
+      margin-left: 200px;
+}
+.home .hometext{
+    margin-top: 90px;
+    margin-right: 100px;
+}
+.hometext h1{
+    font-size: 70px;
+    color: rgb(216, 202, 11) ;
+
+}
+.hometext h3{
+    margin-top: 22px;
+    font-size: 22px;
+    
+}
+.hometext p{
+    margin-top: 22px;
+    color: silver;
+    
+}
+.hometext button{
+    margin-top: 22px;
+    font-size: 22px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color:  rgb(216, 202, 11) ;
+    color: black;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.hometext button:hover{
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+.head{
+    text-align:center;
+    font-size: 21px;
+      padding: 45px;
+}
+.head span{
+    color:  rgb(216, 202, 11) ;  
+}
+.ourprogram{
+    display: flex;
+    justify-content: center;
+    padding: -120px;
+}
+.ourprogram .crd {
+   
+    padding: 100px;
+    text-align: center;  
+    margin-right: 45px;
+    margin-top: -70px; 
+    
+}
+.ourprogram .crd img:hover{
+    
+    transform: scale(1.80);
+}
+.ourprogram .crd h3{
+    margin-top: 99px;
+}
+.ourplan{
+    display: flex;
+    justify-content: center;
+    padding: 12px ;
+}
+.ourplan .card{
+    padding: 60px;
+    height: 330px;
+    background-color: rgb(49,48,48);
+    box-shadow: 0px 2px 4px rgb(1, 1, 14);
+    text-align: center;
+    margin-inline: 25px ;
+    cursor : pointer;
+}
+.card i{
+    font-size: 25px;
+    margin-top: -11px;
+    color: rgb(216, 202, 11);
+}
+.card h3{
+    margin-top: 22px;
+    color: rgb(216, 202, 11);
+}
+.card h1{
+    margin-top: 22px;
+     color: rgb(216, 202, 11);
+}
+.card p{
+    margin-top: 10px;
+    color: silver;
+}
+.card button{
+    margin-top: 20px;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: rgb(216, 202, 11);
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;
+    color: black;
+     
+}
+.card button:hover{
+    border: 2px solid white;
+    background-color: transparent;
+    color: white
+    
+}
+.card:hover{
+    transition: 0.8s ease;
+    width: 220px;
+    
+    height: 330px;
+    background-color: rgb(1, 1, 14);
+    font-size: 22px
+    cursor : pointer;
+    
+    
+}
+/*block*/
+.ourBlog{
+    display: flex;
+    justify-content: center;
+
+}
+.ourBlog .blogcard{
+    width: 300px;
+    height: 600px;
+    margin-inline: 15px;
+    padding: 15px;
+    background-color:rgb(49,48,48) ;
+   
+}
+.blogcard img{
+    width: 300px;
+}
+.blogcard H3{
+    color: rgb(216, 202, 11);
+    font-size: 23PX;
+}
+.blogcard p{
+    margin-top: -10px;
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: silver;
+     margin-bottom: 20PX;
+      
+}
+ 
+.blogtext a{
+   text-decoration: none;
+   text-align: center;  
+   width: 15px;
+   border-radius: 10px;
+   background-color: rgb(216, 202, 11);
+    padding:6px;
+    color: black;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin-left: 80px;
+    
+   
+}
+.blogtext{
+    margin-top: 29PX;
+    margin-left: 7PX;
+}
+
+
+.blogtext a:hover{
+    border: 2px solid rgb(204, 203, 196);
+    background-color: transparent;
+    color: white;
+     
+    
+}  
+.contactPage{
+    display: flex;
+    justify-content: center;
+}
+.contacText{
+    margin-top: 100px;
+    margin-left: 80px;
+    color: rgb(216, 202, 11);
+    font-size: 24px;
+
+}
+.contactPage img{
+    width: 45%;
+    margin-top: 30px;
+    padding-inline: -60px;
+    margin-left: 300px;
+
+}
+.contact  h2{
+    margin-left: -70px;
+    margin-top: 25px;
+}
+.contectUs{
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(216, 202, 11);
+    margin-top: 50px;
+    box-shadow: 2px 0px 12px 2px gray;
+    height: 262px;
+    margin-inline: 452px;
+    margin-top: 62px;
+    padding-top: 22px;
+    border-radius: 30px;
+
+}
+.contectUs input{
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding:13px ;
+    padding-inline: 12px;
+    margin-top: 17px;
+    box-shadow: 0px 2px 2px 2px rgb(216, 202, 11);
+}
+.contectUs button{
+    background-color: rgb(216, 202, 11);
+    width: 90px;
+    color: black;
+    font-family: cursive;
+    margin-top: 22px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    height: 28px;
+    box-shadow: -1px 2px 2px 2px rgb(3, 3, 2);
+}
+
+    
+
+
+.contectUs button:hover{
+    background-color: transparent;
+    color: white;
+    border: 3px solid rgb(204, 203, 196);
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 52px;
+    padding: -2px;
+    box-shadow: -0px 2px 6px 2px gray ;
+
+}
+.footer .footertext{
+    padding: 12px;
+    margin-inline: 80px;
+    margin-left: 63px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: rgb(216, 202, 11);
+    height: auto;
+
+}    
+.footertext p{
+    font-size: 17px;
+    color: silver;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+
+   
+
+#registrationForm {
+      display: none;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 300px;
+    }

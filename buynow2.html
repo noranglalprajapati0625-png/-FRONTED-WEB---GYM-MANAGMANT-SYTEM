@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Buy Plan — Neon Glow</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark: #070717;
+    --glass: rgba(255,255,255,0.05);
+    --neon1: #6EE7F9;    /* cyan */
+    --neon2: #8B5CF6;    /* purple */
+    --accent: linear-gradient(90deg,var(--neon1),var(--neon2));
+    --muted: rgba(255,255,255,0.75);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Poppins",sans-serif;
+    background:
+      radial-gradient(600px 300px at 10% 10%, rgba(139,92,246,0.07), transparent 12%),
+      radial-gradient(600px 300px at 90% 90%, rgba(110,231,249,0.05), transparent 12%),
+      var(--bg-dark);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:22px;
+  }
+
+  /* Container / card */
+  .app {
+    width: 420px;
+    max-width:100%;
+    border-radius:20px;
+    overflow:hidden;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 18px 50px rgba(2,6,23,0.6), 0 0 120px rgba(139,92,246,0.03) inset;
+    transform: translateY(0);
+  }
+
+  /* top hero with subtle neon lines and user's uploaded image */
+  .hero {
+    position:relative;
+    height:150px;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
+      url('/mnt/data/2933b126-b91a-458e-9d3e-d503f8b5b9e2.png') center/cover no-repeat;
+  }
+  .glow-strip {
+    position:absolute;
+    left:-20px; right:-20px; top:-12px; height:12px;
+    background: linear-gradient(90deg, rgba(110,231,249,0.16), rgba(139,92,246,0.16));
+    filter: blur(18px);
+    opacity:0.9;
+  }
+  .hero-brand {
+    position:absolute;
+    left:18px; bottom:14px; display:flex; gap:12px; align-items:center;
+    backdrop-filter: blur(6px);
+  }
+  .logo {
+    width:56px;height:56px;border-radius:12px;
+    background: linear-gradient(135deg,var(--neon1),var(--neon2));
+    display:flex;align-items:center;justify-content:center;color:#021028;font-weight:800;font-size:18px;
+    box-shadow: 0 12px 40px rgba(139,92,246,0.16);
+    border:1px solid rgba(255,255,255,0.06);
+  }
+  .brand-text { line-height:1; }
+  .brand-text h3{ margin:0; font-size:18px; font-weight:800; color:white; text-shadow:0 6px 18px rgba(0,0,0,0.6); }
+  .brand-text p { margin:0; font-size:12px; color: rgba(255,255,255,0.7); }
+
+  /* content */
+  .content { padding:20px 20px 26px 20px; }
+
+  .plan {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px; border-radius:12px; margin-bottom:16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(139,92,246,0.06);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.45);
+    position:relative;
+    overflow:visible;
+  }
+
+  /* neon accent left bar */
+  .neon-bar {
+    position:absolute; left:0; top:0; bottom:0; width:6px;
+    background: var(--accent);
+    filter: blur(6px);
+    border-top-left-radius:12px; border-bottom-left-radius:12px;
+  }
+
+  .plan-left { padding-left:12px; }
+  .plan-title { font-size:20px; font-weight:800; color:var(--neon2); text-shadow: 0 10px 26px rgba(139,92,246,0.08); }
+  .plan-sub { margin:4px 0 0 0; color: rgba(255,255,255,0.80); font-size:13px; }
+
+  .plan-right { text-align:right; padding-right:12px; }
+  .price {
+    font-size:26px; font-weight:900;
+    background: linear-gradient(90deg, rgba(110,231,249,0.14), rgba(139,92,246,0.12));
+    padding:6px 12px; border-radius:10px; color:#fff;
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 6px 18px rgba(139,92,246,0.06);
+  }
+  .valid { font-size:12px; color: rgba(255,255,255,0.6); margin-top:6px; }
+
+  form { margin-top:6px; }
+  label { display:block; font-size:13px; color:#eaeaea; margin-bottom:6px; font-weight:600; }
+  .field { margin-bottom:12px; }
+  input {
+    width:100%; padding:12px 14px; border-radius:10px; border:none; outline:none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    color:#fff; font-size:15px; border:1px solid rgba(255,255,255,0.03);
+    transition: box-shadow .18s ease, transform .12s ease;
+  }
+  input:focus { box-shadow: 0 12px 30px rgba(139,92,246,0.12); transform: translateY(-2px); }
+
+  .cta {
+    display:flex; gap:10px; margin-top:6px;
+  }
+  .btn-primary {
+    flex:1; padding:12px 14px; border-radius:12px; border:none; cursor:pointer;
+    background: linear-gradient(90deg, rgba(110,231,249,0.95), rgba(139,92,246,0.95));
+    color:#021028; font-weight:800; font-size:15px;
+    box-shadow: 0 14px 40px rgba(110,231,249,0.12);
+    transition: transform .14s ease, box-shadow .14s ease;
+  }
+  .btn-primary:hover{ transform: translateY(-4px); box-shadow: 0 20px 56px rgba(110,231,249,0.16); }
+  .btn-ghost {
+    padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.06);
+    background:transparent; color:var(--muted); font-weight:700; cursor:pointer;
+  }
+
+  /* glowing floating orb decor */
+  .orb {
+    position:absolute; right:-60px; top:-60px; width:140px; height:140px; border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, rgba(110,231,249,0.25), rgba(139,92,246,0.12) 40%, transparent 60%);
+    filter: blur(28px); pointer-events:none; z-index:0;
+  }
+
+  /* toast */
+  .toast {
+    position: fixed;
+    left:50%; bottom:22px;
+    transform: translateX(-50%) translateY(12px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    color:#fff;padding:12px 18px;border-radius:12px;
+    border:1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    opacity:0; pointer-events:none; transition: all .35s cubic-bezier(.2,.9,.3,1);
+  }
+  .toast.show { opacity:1; transform: translateX(-50%) translateY(0); pointer-events:auto; }
+
+  @media (max-width:480px){
+    .app { margin:12px; }
+    .hero { height:120px; }
+    .orb { display:none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="app" role="region" aria-label="Buy Plan Neon">
+    <div class="hero" aria-hidden="true">
+      <div class="glow-strip"></div>
+      <div class="hero-brand" style="left:14px;">
+        <div class="logo">FC</div>
+        <div class="brand-text">
+          <h3>FITCLUB</h3>
+          <p>Neon Studio — Modern Fitness</p>
+        </div>
+      </div>
+      <div class="orb" aria-hidden="true"></div>
+    </div>
+
+    <div class="content">
+      <div class="plan" role="article" aria-label="Plan details">
+        <div class="neon-bar" aria-hidden="true"></div>
+
+        <div class="plan-left">
+          <div class="plan-title" id="planTitle">Premium Package</div>
+          <div class="plan-sub">Access to gym • 30 days • Trainer support</div>
+        </div>
+
+        <div class="plan-right">
+          <div class="price" id="planPrice">₹900</div>
+          <div class="valid" id="planValid">one-time • 30 days</div>
+        </div>
+      </div>
+
+      <form id="buyForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile number</label>
+          <input id="phone" name="phone" type="tel" placeholder="10 digit mobile number" maxlength="10" inputmode="numeric" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="cta">
+          <button type="submit" class="btn-primary" aria-label="Confirm and Buy">Confirm & Buy</button>
+          <button type="button" class="btn-ghost" id="cancelBtn" aria-label="Cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Your data has been sent to the server!</div>
+
+<script>
+  // plan detection via ?plan=basic|premium|diamond
+  const params = new URLSearchParams(window.location.search);
+  const planParam = (params.get('plan') || 'basic').toLowerCase();
+
+  const planMap = {
+    basic: {title:'Basic Package', price:'₹900', valid:'one-time • 30 days'},
+    premium: {title:'Premium Package', price:'₹900', valid:'one-time • 30 days'},
+    diamond: {title:'Diamond Package', price:'₹1600', valid:'one-time • 30 days'}
+  };
+
+  const selected = planMap[planParam] || planMap.basic;
+  document.getElementById('planTitle').innerText = selected.title;
+  document.getElementById('planPrice').innerText = selected.price;
+  document.getElementById('planValid').innerText = selected.valid;
+
+  // phone input: allow digits only
+  const phone = document.getElementById('phone');
+  phone.addEventListener('input', () => {
+    phone.value = phone.value.replace(/\D/g,'').slice(0,10);
+  });
+
+  // toast helper
+  function showToast(msg='Saved', ms=3000){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._t);
+    t._t = setTimeout(()=> t.classList.remove('show'), ms);
+  }
+
+  // form submission
+  document.getElementById('buyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const ph = phone.value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if(!name){ alert('Please enter your name'); return; }
+    if(ph.length !== 10){ alert('Enter a valid 10-digit mobile number'); return; }
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ alert('Please enter a valid email'); return; }
+
+    const payload = { plan: planParam, price: selected.price.replace('₹',''), name, phone: ph, email, ts: new Date().toISOString() };
+    console.log('Payload ->', payload);
+
+    // show neon toast
+    showToast('Your data has been sent to the server!');
+
+    // optional: reset form after success
+    // this.reset();
+  });
+
+  // cancel button
+  document.getElementById('cancelBtn').addEventListener('click', () => {
+    // small bounce animation
+    const app = document.querySelector('.app');
+    app.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(8px)' }, { transform: 'translateY(0)' }], { duration: 260 });
+    showToast('Purchase cancelled', 1800);
+  });
+</script>
+</body>
+</html>

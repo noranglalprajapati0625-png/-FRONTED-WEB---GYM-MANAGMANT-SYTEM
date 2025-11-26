@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Now</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(145deg, #4b0082, #8e2de2, #ff00c3);
+            background-size: 300% 300%;
+            animation: bgMove 10s ease infinite;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 380px;
+            padding: 35px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(35px);
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+            animation: fadeIn 0.8s ease;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        label {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #ff006f;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #d4005e;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Join Now</h2>
+
+        <form id="joinForm">
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter your mobile number" maxlength="10" required>
+
+            <label>Create Password</label>
+            <input type="password" placeholder="Create your password" required>
+
+            <label>Select Plan</label>
+            <select required>
+                <option value="">Choose Plan</option>
+                <option>Basic – 30 days 600rs.</option>
+                <option>Premium – 30 days 900rs.</option>
+                <option>Diamond – 30 days 1600rs.</option>
+            </select>
+
+            <button type="submit">JOIN NOW</button>
+
+        </form>
+    </div>
+
+
+
+    <!-- JavaScript for Validation + Message -->
+    <script>
+        document.getElementById("joinForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let phone = document.getElementById("phone").value;
+
+            // Mobile number validation
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert("Please enter a valid 10-digit mobile number");
+                return;
+            }
+
+            // Success message
+            alert("Your data has been sent to the server!");
+        });
+    </script>
+
+</body>
+</html>
